@@ -4,5 +4,5 @@ I use it a lot when playing with linux.<br />
 
 Some of the  cool things I do are:<br />
 &nbsp; 1. Press **u** - to undo the last the command and **U** to undo the whole line. <br />
-&nbsp; 2. CTRL-R to redo
+&nbsp; 2. CTRL-R to redo<br />
 &nbsp; 3. CTRL-v then arrow **up** or **down** to select vertically.
