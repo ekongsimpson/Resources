@@ -1,4 +1,4 @@
-$${\color{red} Rename \space your \space log \space files \space with \space .log \space extensions }
+$${\color{red}Rename \space your \space log \space files \space with \space .log \space extensions }
 
 
 
