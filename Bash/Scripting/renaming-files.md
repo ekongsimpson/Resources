@@ -9,7 +9,7 @@ DAY=$(date +%F)
 
 cd /C/SCRIPTS/BASH/projects/myfiles
 
-for FILE in *.jgp
- do
-    mv $FILE ${DAY}-${FILE}
- done
+for FILE in *.jgp<br /><br />
+$\hspace{5pt}$  do<br /><br />
+    $\hspace{5pt}$ mv $FILE ${DAY}-${FILE}<br /><br />
+ $\hspace{5pt}$ done<br /><br />
