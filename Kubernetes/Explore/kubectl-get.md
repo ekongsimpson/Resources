@@ -6,6 +6,7 @@ By the way, po stands for pods - because kubernetes admins would abbreviate ever
 
 Try $${\color{red}kubectl \space get \space po \space myapp -oyaml.}$$<br />
 
+---
 apiVersion: v1
 kind: Pod
 metadata:
@@ -114,3 +115,4 @@ status:
   - ip: 10.1.156.168
   qosClass: BestEffort
   startTime: "2023-12-18T21:54:13Z"
+---
