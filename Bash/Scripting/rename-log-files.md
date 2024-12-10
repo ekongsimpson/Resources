@@ -1,3 +1,8 @@
+$${\color{red} Rename \space your \space log \space files \space with \space .log \space extensions }
+
+
+
+
 #!/bin/bash
 
 one=.1
