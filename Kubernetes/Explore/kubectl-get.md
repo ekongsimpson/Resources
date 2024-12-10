@@ -120,6 +120,8 @@ status:
 
 
 Now compare that with a json output.
+$${\color{red}kubectl \space get \space po \space myapp -ojson.}$$<br />
+
 
 {
     "apiVersion": "v1",
