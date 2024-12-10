@@ -289,3 +289,7 @@ $${\color{red}kubectl \space get \space po \space myapp -ojson.}$$<br />
         "startTime": "2023-12-18T21:54:13Z"
     }
 }
+
+---
+
+## Note how rich the json output is!
