@@ -136,7 +136,7 @@ $${\color{red}kubectl \space get \space po \space myapp -ojson.}$$<br />
         "labels": {
             "app": "myapp"
         },
-        "name": "myapp-pod",
+        "name": "myapp",
         "namespace": "default",
         "resourceVersion": "12617057",
         "uid": "b287e9d0-3630-4db3-8939-eeaf1079565a"
