@@ -9,7 +9,7 @@ DAY=$(date +%F)
 
 cd /C/SCRIPTS/BASH/projects/myfiles
 
-for FILE in *.jgp<br />
+for FILE in *.jgp
 &nbsp;
 do<br />
 &nbsp;
