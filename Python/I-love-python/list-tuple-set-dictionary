@@ -1,0 +1,13 @@
+|    LIST    |    TUPLES    |    SETS    |    DICTIONARIES    |
+| ---        | ---          | ---        | ---                |
+| a collection of ordered data. | an ordered collection of data. | an unordered collection. | an unordered collection of data |
+| mutable with duplicates | immutable | mutable and have no duplicates | mutable and have no key duplicates |
+| declared with square braces [] | declared with parenthesis () | declared with curly brackets {} | declared with curly brackets {} |
+| Uses append() to add items | Items cannot be added | Uses add() to add items | Uses update() to add items |
+| Uses pop() to remove items | Items cannot be removed | Uses pop() to remove items | Uses pop() to remove items |
+| Uses sort() method sorts the elements | Cannot be sorted | Cannot be sorted | Uses sort() method sorts the elements |
+| index() searches for a given element | index() searches for a given element | No index() or order (true or false) | get() method returns the value of the item |
+| count() counts the no. of a specified item | count() counts the no. of a specified value | no count() methods | no count() methods |
+| reverse() method reverses the elements | No reverse() method | No reverse() method | No reverse() method |
+| --- | --- | --- | ---|
+
