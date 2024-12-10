@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#If you had log files with .log extensions, you could rename them with the following code:
+
 one=.1
 declare -a NEWLOG=()
 for i in *.log;
