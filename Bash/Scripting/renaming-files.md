@@ -11,7 +11,5 @@ cd /C/SCRIPTS/BASH/projects/myfiles
 
 for FILE in *.jgp<br />
 do<br />
-&nbsp;
     $\hspace{5pt}$ $\hspace{5pt}$ mv $FILE ${DAY}-${FILE}<br />
-    &nbsp;
 done<br />
