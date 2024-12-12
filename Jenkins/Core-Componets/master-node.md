@@ -11,4 +11,4 @@ This includes:
 
 ![image](https://github.com/user-attachments/assets/31fee2d9-d7fc-4ce6-8940-b712c168d595)
 
-The slaves could be Windows, Linux or Container
+The slaves could be running on Windows, Linux or Containers
