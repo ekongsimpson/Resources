@@ -1,20 +1,20 @@
 ## Your basic jenkins build pipeline could look like this:<br/>
 
 Jenkinsfile (Declarative Pipeline)<br/>
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
-            }
-        }
-    }
-}
+pipeline {<br/>
+    agent any<br/>
+    stages {<br/>
+        stage('Build') {<br/>
+            steps {<br/>
+                sh 'echo "Hello World"'<br/>
+                sh '''<br/>
+                    echo "Multiline shell steps works too"<br/>
+                    ls -lah<br/>
+                '''<br/>
+            }<br/>
+        }<br/>
+    }<br/>
+}<br/>
 
 ... if jenkins is running on Linux, BSD, and Mac OS
 
