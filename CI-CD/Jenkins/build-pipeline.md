@@ -1,3 +1,4 @@
+## Before playing around with jenkins pipeline please install jenkins first by following the guide [here](https://www.jenkins.io/doc/book/installing/)
 ## The definition of a Jenkins Pipeline is typically written into a text file (called a Jenkinsfile)
 ## Your basic jenkins build pipeline could look like this:<br/>
 
