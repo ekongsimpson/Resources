@@ -75,7 +75,8 @@ You cannot do that in a multi-stage pipeline, though. Hence, if I had a 2 stage-
           echo See https://aka.ms/yaml <br/>
         displayName: 'Run a multi-line script' <br/>
 
-## Stages Cannot Have Triggers: Stages themselves cannot have triggers. However, you can use conditions to control when specific stages execute. For example:
+## Stages Cannot Have Triggers: <br/>
+Stages themselves cannot have triggers. However, you can use conditions to control when specific stages execute. For example:
 
 condition: eq(variables['Build.SourceBranchName'], 'main')
 
