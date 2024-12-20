@@ -60,20 +60,21 @@ You cannot do that in a multi-stage pipeline, though. Hence, if I had a 2 stage-
           echo See https://aka.ms/yaml <br/>
         displayName: 'Run a multi-line script' 
   
-  - Stage A
-    - Job 2
+  - Stage B <br/>
+    Job 1 <br/>
+    - deployment: Deploy2MYENV <br/>
+      displayName: Deploy2MYENV <br/>
+      environment: MYENV <br/>
+      pool: <br/>
+        vmImage: ubuntu-latest <br/>
+      strategy: <br/>
+       runOnce: <br/>
+        deploy: <br/>
+         steps: <br/>
+          - script: | <br/>
+            echo Add other tasks to build, test, and deploy your project. <br/>
+            echo See https://aka.ms/yaml <br/>
 
-      pool:
-        vmImage: ubuntu-latest
-
-      steps:
-      - script: echo Hello, world! <br/>
-        displayName: 'Run a one-line script' <br/>
-
-      - script: | <br/>
-          echo Add other tasks to build, test, and deploy your project. <br/>
-          echo See https://aka.ms/yaml <br/>
-        displayName: 'Run a multi-line script' <br/>
 
 ## Stages Cannot Have Triggers: <br/>
 Stages themselves cannot have triggers. However, you can use conditions to control when specific stages execute. For example:
