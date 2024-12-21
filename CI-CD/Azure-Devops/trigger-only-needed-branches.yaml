@@ -1,0 +1,9 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - src/*
+      exclude:
+      - docs/*
