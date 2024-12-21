@@ -1,5 +1,5 @@
 ## A STARTER PIPELINE
-The heirarchy in the structure of a yaml file looks like this:
+The heirarchy in the structure of an azure pipeline yaml file looks like this:
 
 - Pipeline
   - Stage A
@@ -14,27 +14,9 @@ The heirarchy in the structure of a yaml file looks like this:
   - Stage B
     - ...
 
-Example of a starter pipeline:<br/>
+[This](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/azdo-starter-pipeline.yaml) is example of a starter pipeline.
 
-#Starter pipeline <br/>
-#Start with a minimal pipeline that you can customize to build and deploy your code. <br/>
-#Add steps that build, run tests, deploy, and more: <br/>
-#https://aka.ms/yaml <br/>
 
-trigger: <br/>
-- main
-
-pool: <br/>
-  vmImage: ubuntu-latest
-
-steps: <br/>
-- script: echo Hello, world! <br/>
-  displayName: 'Run a one-line script'
-
-- script: | <br/>
-    echo Add other tasks to build, test, and deploy your project. <br/>
-    echo See https://aka.ms/yaml <br/>
-  displayName: 'Run a multi-line script' <br/>
 
 
 Considering the structure of the heirarchy above the starter pipeline could fit into **JOB 1** under stage A in the pipeline. <br/>
