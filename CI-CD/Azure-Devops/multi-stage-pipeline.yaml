@@ -1,0 +1,59 @@
+- Pipeline
+  trigger:
+  trigger:
+    branches:
+      include:
+        - main
+        - develop
+
+  variables:
+    - group: CommonVariables  # Variable group linked to Azure Key Vault
+
+  stages:
+    - stage: A
+      displayName: Build Stage
+      jobs:
+        - job: BuildJob
+          pool:
+            vmImage: 'ubuntu-latest'
+          steps:
+            - task: UseDotNet@2
+              inputs:
+                packageType: 'sdk'
+                version: '6.x'
+            - script: dotnet build --configuration Release
+              displayName: 'Build Application'
+
+    - stage: B
+      displayName: Test Stage
+      dependsOn: Build
+      jobs:
+        - job: TestJob
+          pool:
+            vmImage: 'ubuntu-latest'
+          steps:
+            - script: dotnet test --configuration Release --no-build
+              displayName: 'Run Unit Tests'
+            - task: PublishTestResults@2
+              inputs:
+                testResultsFormat: 'JUnit'
+                testResultsFiles: '**/test-results.xml'
+
+    - stage: C
+      displayName: Deploy Stage
+      dependsOn: Test
+      condition: succeeded()
+      jobs:
+        - deployment: DeployJob
+          pool:
+            vmImage: 'ubuntu-latest'
+          environment: 'staging'
+          strategy:
+            runOnce:
+              deploy:
+                steps:
+                  - script: echo Deploying to Staging Environment
+                  - task: AzureRmWebAppDeployment@4
+                    inputs:
+                      appType: 'webApp'
+                      # Additional deployment inputs
