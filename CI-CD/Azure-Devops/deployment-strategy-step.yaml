@@ -1,0 +1,5 @@
+strategy:
+  runOnce:
+    deploy:
+      steps:
+      - script: echo Deploying in rolling strategy
