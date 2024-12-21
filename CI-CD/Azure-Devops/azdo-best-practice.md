@@ -38,4 +38,4 @@ _Service connections cannot be specified by variable._
 
 Taking [this](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/pre-approval.yaml) YAML pipeline for example, it will reference the variable group Feature Deployment on the condition ${{ if eq(variables['Build.SourceBranchName'], 'feature') }}, and will keep waiting for the approval to use this variable group.
 
-Keep in mind that $${\color{red}ManualValidation@1}$$ could also be very helpful in many scenario - combining it with the **dependsOn** on **jobs**. 
+Keep in mind that $${\color{red}ManualValidation@1}$$ could also be very helpful in many scenario - combining it with the **dependsOn** property on **jobs**. 
