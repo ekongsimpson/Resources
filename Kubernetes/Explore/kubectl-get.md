@@ -19,3 +19,7 @@ Now compare that with a json output.
 ---
 
 ## Note how rich the json output is!
+No wonder admins turn to **jsonpath** when they need some aggregations!!!
+
+## JSONPATH
+
