@@ -1,0 +1,13 @@
+# Template file: deploy-template.yml
+parameters:
+  environment: ''
+steps:
+- script: echo Deploying to ${{ parameters.environment }}
+
+# Main pipeline
+stages:
+- stage: Deploy
+  jobs:
+  - template: deploy-template.yml
+    parameters:
+      environment: Production
