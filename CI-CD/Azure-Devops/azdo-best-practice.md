@@ -39,3 +39,55 @@ _Service connections cannot be specified by variable._
 Taking [this](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/pre-approval.yaml) YAML pipeline for example, it will reference the variable group Feature Deployment on the condition ${{ if eq(variables['Build.SourceBranchName'], 'feature') }}, and will keep waiting for the approval to use this variable group.
 
 Keep in mind that $${\color{red}ManualValidation@1}$$ could also be very helpful in many scenario - combining it with the **dependsOn** property on **jobs**. 
+
+
+
+## 4. Use Variables and Variable Groups
+- Define reusable variables for deployment targets, credentials, or configuration.
+- Store sensitive information (e.g., passwords, API keys) securely in Azure DevOps Library as secret variables.
+
+## 5. Secure Secrets and Credentials
+- Store secrets like connection strings or API tokens in [Azure Key Vault](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/keyvault-step.yaml) or as pipeline secrets in variable groups.
+- Use Azure DevOps’ built-in integration with Azure Key Vault for secure secret management.
+
+## 6. Use [Deployment Strategies](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/deployment-strategy-step.yaml)
+- Rolling Deployment: Gradually replace instances in a target environment to minimize downtime.
+- Blue-Green Deployment: Deploy to a new environment and switch traffic to it after testing.
+- Canary Deployment: Deploy to a small subset of users first, then gradually increase.
+
+## 7. Define Clear Triggers
+- Use branch-specific triggers to run the pipeline only on relevant branches.
+- Use pipeline triggers or artifact triggers for dependency pipelines.
+- Avoid running pipelines unnecessarily (e.g., [exclude certain branches](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/trigger-only-needed-branches.yaml)).
+
+## 8. Use Templates for Reusability
+- Extract common steps into templates to avoid duplication and improve maintainability.
+- Include [templates](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/template-reusabiliity.yaml) for tasks like deployment or environment setup.
+
+## 9. Monitor and Report
+- Enable logging and telemetry for each stage to debug issues quickly.
+- Use Azure DevOps' Test Plans and integration with tools like **Application Insights** for detailed monitoring.
+- Set up notifications for pipeline failures or deployment issues.
+
+## 10. Align with Infrastructure as Code (IaC)
+- Deploy infrastructure alongside your application using tools like Terraform, Bicep, or ARM templates.
+- Use tasks like AzureResourceManagerTemplateDeployment or TerraformCLI.
+
+## 11. Optimize for Performance
+- Use [pipeline caching]() to speed up builds
+- Use pipeline parallelism and multi-agent jobs where applicable.
+
+## 12. Use [Conditional Logic](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/condition-logic.yaml) for Flexibility
+- Apply conditions to control execution based on branch, variables, or environment.
+
+## 13. Test Before Deploying
+- Include automated unit, integration, and smoke tests as part of your pipeline.
+- Run tests in isolated environments before deploying to production.
+
+## 14. Use Artifacts
+- Package and [publish build outputs](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/publish-build-artifacts.yaml) (e.g., .zip, Docker images) as artifacts for reuse in deployment stages.
+
+## 15. Regularly Review and Update Pipelines
+- Periodically review pipelines for outdated dependencies, unused tasks, or inefficiencies.
+- Keep tooling, agents, and dependencies up to date.
+
