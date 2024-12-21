@@ -19,43 +19,11 @@ The heirarchy in the structure of an azure pipeline yaml file looks like this:
 
 
 
-Considering the structure of the heirarchy above the starter pipeline could fit into **JOB 1** under stage A in the pipeline. <br/>
+Considering the structure of the heirarchy above the starter pipeline could fit into **JOB 1** under **stage A** in the pipeline. <br/>
 The jobs, stages and pipeline keywords are missing in this example. A single stage pipeline can do without them. You jump straight into steps.
 
-You cannot do that in a multi-stage pipeline, though. Hence, if I had a 2 stage-pipeline, I must define them and remember that the trigger keyword is used at the pipeline level, not within the stages because it defines when the pipeline as a whole should run (e.g., on specific branches, tags, or schedules). <br/> E.g.<br/>
+You cannot do that in a multi-stage pipeline, though. Hence, if I had a 2 stage-pipeline, I must define them and remember that the trigger keyword is used at the pipeline level, not within the stages because it defines when the pipeline as a whole should run (e.g., on specific branches, tags, or schedules). <br/> [Example](https://github.com/ekongsimpson/Resources/blob/main/CI-CD/Azure-Devops/multi-stage-pipeline.yaml)<br/>
 
-- Pipeline
-  trigger:
-  - main
-
-  - Stage A
-    - Job 1
-      pool:
-        vmImage: ubuntu-latest
-
-      steps: <br/>
-      - script: echo Hello, world! <br/>
-        displayName: 'Run a one-line script' <br/>
-
-      - script: | <br/>
-          echo Add other tasks to build, test, and deploy your project. <br/>
-          echo See https://aka.ms/yaml <br/>
-        displayName: 'Run a multi-line script' 
-  
-  - Stage B <br/>
-    Job 1 <br/>
-    - deployment: Deploy2MYENV <br/>
-      displayName: Deploy2MYENV <br/>
-      environment: MYENV <br/>
-      pool: <br/>
-        vmImage: ubuntu-latest <br/>
-      strategy: <br/>
-       runOnce: <br/>
-        deploy: <br/>
-         steps: <br/>
-          - script: | <br/>
-            echo Add other tasks to build, test, and deploy your project. <br/>
-            echo See https://aka.ms/yaml <br/>
 
 
 ## Stages Cannot Have Triggers: <br/>
