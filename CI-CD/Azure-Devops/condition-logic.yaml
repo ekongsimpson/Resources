@@ -1,0 +1,2 @@
+- script: echo "Deploying to production"
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
