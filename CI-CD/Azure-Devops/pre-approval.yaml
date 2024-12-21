@@ -1,0 +1,14 @@
+trigger:
+- main
+- feature
+
+variables:
+- ${{ if eq(variables['Build.SourceBranchName'], 'feature') }}:
+  - group: Development
+- ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
+  - group: MainDevelopment
+
+steps:
+- checkout: self
+- script: |
+    echo $(PreDeployApprovalRequired)
