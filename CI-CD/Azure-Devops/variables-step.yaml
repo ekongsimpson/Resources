@@ -1,0 +1,4 @@
+variables:
+  - name: mySecret
+    value: $(mySecretValue)
+    isSecret: true
