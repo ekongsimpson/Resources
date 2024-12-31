@@ -57,5 +57,6 @@
        - kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
      - Flannel:
        - kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+         
    Do not forget that sometimes, stopping and starting the nodes again can resolve the issue if there are transient problems
 
