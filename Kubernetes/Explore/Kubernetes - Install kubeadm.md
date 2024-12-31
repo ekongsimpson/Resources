@@ -46,4 +46,16 @@
    - - mkdir -p $HOME/.kube
      - sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
      - sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    
+   ## TROUBLESHOOTING
+   If after installations you start having **cni plugin not initialized** issues, ensure:
+
+   - CoreDNS is running. If not, try inspect the related pod:
+     - k -n kube-system describe pod/coredns-xxxxx-xxxxx. The events should give you a clue 
+   - CNI plugin, such as **Calico** or **Flannel**, has been installed. Example:
+     - Calico:
+       - kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+     - Flannel:
+       - kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+   
 
